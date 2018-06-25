@@ -1,43 +1,43 @@
 <?xml version="1.0"?>
 <config>
 	<modules>
-		<Cammino_Shipping>
+		<Cammino_Braspress>
 			<version>0.1.0</version>
-		</Cammino_Shipping>
+		</Cammino_Braspress>
 	</modules>
 	<global>
 		<helpers>
-			<camminoshipping>
-				<class>Cammino_Shipping_Helper</class>
-			</camminoshipping>
+			<camminobraspress>
+				<class>Cammino_Braspress_Helper</class>
+			</camminobraspress>
 		</helpers>
 		<models>
-			<camminoshipping>
-				<class>Cammino_Shipping_Model</class>
-			</camminoshipping>
+			<camminobraspress>
+				<class>Cammino_Braspress_Model</class>
+			</camminobraspress>
 		</models>
 		<sales>
 			<shipping>
 				<carriers>
-					<correios>
-						<class>Cammino_Shipping_Model_Carrier_Correios</class>
-					</correios>
+					<camminobraspress>
+						<class>Cammino_Braspress_Model_Carrier_Braspress</class>
+					</camminobraspress>
 				</carriers>
 			</shipping>
 		</sales>
 	</global>
 	<default>
 		<carriers>
-			<correios>
+			<camminobraspress>
 				<active>0</active>
 				<sallowspecific>0</sallowspecific>
-				<model>cammino_shipping_model_carrier_correios</model>
-				<name>correios</name>
-				<title>Correios</title>
+				<model>cammino_braspress_model_carrier_braspress</model>
+				<name>camminobraspress</name>
+				<title>Braspress</title>
 				<freepac>0</freepac>
 				<sort_order>0</sort_order>
 				<showmethod>1</showmethod>
-			</correios>
+			</camminobraspress>
 		</carriers>
 	</default>
 </config>

@@ -3,9 +3,8 @@
     <sections>
         <carriers>
             <groups>
-                <!-- Correios -->
-                <correios translate="label" module="shipping">
-                    <label>Correios</label>
+                <camminobraspress translate="label" module="camminobraspress">
+                    <label>Braspress</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1</sort_order>
                     <show_in_default>1</show_in_default>
@@ -29,31 +28,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </title>
-                        <user translate="label">
-                            <label>User</label>
+                        <storecnpj translate="label">
+                            <label>CNPJ da loja</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>4</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </user>
-                        <pass translate="label">
-                            <label>Password</label>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>5</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </pass>
-                        <services translate="label">
-                            <label>Serviços liberados</label>
-                            <source_model>Cammino_Shipping_Model_Source_Correios_Services</source_model>
-                            <frontend_type>multiselect</frontend_type>
-                            <sort_order>6</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </services>
+                        </storecnpj>
                         <sort_order translate="label">
                             <label>Sort order</label>
                             <frontend_type>text</frontend_type>
@@ -62,7 +44,34 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </sort_order>
-                        <defaultx translate="label">
+                        <length_field_name translate="label">
+                            <label>Nome do campo de comprimento</label>
+                            <comment>nome do atributo de comprimento do produto</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </length_field_name>
+                        <width_field_name translate="label">
+                            <label>Nome do campo de largura</label>
+                            <comment>nome do atributo de largura do produto</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </width_field_name>
+                        <height_field_name translate="label">
+                            <label>Nome do campo de altura</label>
+                            <comment>nome do atributo de altura do produto</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </height_field_name>
+                        <default_length translate="label">
                             <label>Comprimento padrão</label>
                             <comment>Informe o comprimento padrão de um único produto.</comment>
                             <frontend_type>text</frontend_type>
@@ -70,8 +79,8 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </defaultx>
-                        <defaulty translate="label">
+                        </default_length>
+                        <default_height translate="label">
                             <label>Altura padrão</label>
                             <comment>Informe a altura padrão de um único produto.</comment>
                             <frontend_type>text</frontend_type>
@@ -79,8 +88,8 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </defaulty>
-                        <defaultz translate="label">
+                        </default_height>
+                        <default_width translate="label">
                             <label>Largura padrão</label>
                             <comment>Informe o largura padrão de um único produto.</comment>
                             <frontend_type>text</frontend_type>
@@ -88,7 +97,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </defaultz>
+                        </default_width>
                         <defaultweight translate="label">
                             <label>Peso padrão</label>
                             <comment>Informe o peso padrão de um único produto.</comment>
@@ -98,6 +107,42 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </defaultweight>
+                        <shipping_type translate="label">
+                            <label>Tipo de Frete</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>camminobraspress/source_shippingType</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </shipping_type>
+                        <modal_type translate="label">
+                            <label>Modal</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>camminobraspress/source_modalType</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </modal_type>
+                        <weight_type translate="label">
+                            <label>Peso</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>camminobraspress/source_weightType</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </weight_type>
+                        <measure_type translate="label">
+                            <label>Unidade de Medida dos Produtos</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>camminobraspress/source_measureType</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </measure_type>
                         <shippingdaysextra translate="label">
                             <label>Prazo Extra</label>
                             <comment>Informe a quantidade de dias extras para ser acrescentado ao prazo de entrega.</comment>
@@ -107,28 +152,18 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </shippingdaysextra>
-                        <immediate_shipment_enable translate="label">
-                            <label>Habilitar envio imediato</label>
-                            <comment>Para funcionar, criar atributo "immediate_shipping" do tipo sim/não e vincular ao produto</comment>
+                        <debug translate="label">
+                            <label>Ativar Debug</label>
+                            <comment>logs no arquivo var/log/braspress.log</comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>13</sort_order>
+                            <sort_order>920</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </immediate_shipment_enable>
-                        <immediate_shipment_days translate="label">
-                            <label>Dias para envio não imediato</label>
-                            <comment>Quantidade de dias a mais que será adicionado ao prazo de entrega, caso o produto não tenha envio imediato</comment>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>14</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                        </immediate_shipment_days>
+                            <show_in_store>0</show_in_store>
+                        </debug>
                     </fields>
-                </correios>
-                <!-- /Correios -->
+                </camminobraspress>
             </groups>
         </carriers>
     </sections>

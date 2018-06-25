@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Cammino_Shipping>
+        <Cammino_Braspress>
             <active>true</active>
             <codePool>community</codePool>
-        </Cammino_Shipping>
+        </Cammino_Braspress>
     </modules>
 </config>
