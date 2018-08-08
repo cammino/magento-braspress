@@ -90,8 +90,10 @@ class Cammino_Braspress_Model_Carrier_Braspress extends Mage_Shipping_Model_Carr
         $dest_postcode = $this->clearPostcode($request->getDestPostcode());
 
 	    if ( $weight > 0 ):
+            
             $service = $this->getShippingAmount($origin_postcode, $dest_postcode, $weight, $package_value, 1);
-
+            
+            
             if ($service):
                 // verifica se precisa adicionar dias extras ao prazo de entrega
                 if(intval($this->getConfigData("shippingdaysextra")) > 0):
@@ -100,6 +102,10 @@ class Cammino_Braspress_Model_Carrier_Braspress extends Mage_Shipping_Model_Carr
                     $days = intval($service["days"]);
                 endif;
 
+                // se houver uma regra para frete grátis, seta valor da transportadora para 0
+                if ($request->getFreeShipping() === true)
+                    $service['price'] = 0;
+                
                 $this->addRateResult($result, $service["price"], $this->shippingDays($days));
             else:
                 $this->addError($result, "Desculpe, no momento não estamos atuando com entregas para sua região.");
@@ -107,6 +113,8 @@ class Cammino_Braspress_Model_Carrier_Braspress extends Mage_Shipping_Model_Carr
         else:
             $this->addError($result, "Informações inválidas para calcular o frete");
         endif;
+
+
 
         return $result;
     }
